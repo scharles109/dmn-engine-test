@@ -6,10 +6,12 @@
     </dmn:itemComponent>
   </dmn:itemDefinition>
   <dmn:itemDefinition id="_10A58E93-234F-43AA-B53B-D80596CFB853" name="creditRating" isCollection="false">
-    <dmn:typeRef>string</dmn:typeRef>
-    <dmn:allowedValues kie:constraintType="enumeration" id="_D53F2095-E2F5-4E6C-8386-C6D94370EC71">
-      <dmn:text>"EXCELLENT", "GOOD", "BAD", "POOR"</dmn:text>
-    </dmn:allowedValues>
+    <dmn:itemComponent id="_5B7BCB89-72A7-4448-B092-8C56EEED64F0" name="name" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+      <dmn:allowedValues kie:constraintType="enumeration" id="_F16DA879-7B3A-4F56-BB86-3F67C16D2B38">
+        <dmn:text>"ACH", "GOOD", "BAD", "POOR"</dmn:text>
+      </dmn:allowedValues>
+    </dmn:itemComponent>
   </dmn:itemDefinition>
   <dmn:itemDefinition id="_B8583894-DC3B-426C-BF11-6903BD0E8258" name="loanQualification" isCollection="false">
     <dmn:typeRef>string</dmn:typeRef>
@@ -29,8 +31,8 @@
     </dmn:informationRequirement>
     <dmn:decisionTable id="_C8CC4E93-90A7-40AF-99F9-EB83930C05A6" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
       <dmn:input id="_89815BA9-91F5-47D2-9CFF-64491676F72C">
-        <dmn:inputExpression id="_9EB47655-5BE5-4193-B28D-4A14A3DC3C93" typeRef="creditRating">
-          <dmn:text>income.creditRating</dmn:text>
+        <dmn:inputExpression id="_9EB47655-5BE5-4193-B28D-4A14A3DC3C93" typeRef="string">
+          <dmn:text>income.creditRating.name</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
       <dmn:output id="_E18626D3-6BE9-4719-B87B-CB61F97DA26E" name="action" typeRef="string"/>

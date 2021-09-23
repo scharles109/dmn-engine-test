@@ -45,6 +45,6 @@ public class DMNEngineTest {
 
 		DMNResult dmnResult = dmnEngine.execute(incomeMap);
 
-		assertEquals(1, dmnResult.getDecisionResults().size());
+		assertEquals(0, dmnResult.getMessages().size());
 	}
 }
